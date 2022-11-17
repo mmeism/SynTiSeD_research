@@ -1,0 +1,26 @@
+"kettle", 06:04:19, 1
+"lamp_1", 06:13:25, 1
+"vacuum cleaner", 06:21:03, 1
+"kettle", 06:52:52, 1
+"kettle", 06:59:11, 1
+"kettle", 07:03:04, 1
+"kettle", 07:09:03, 1
+"kettle", 07:17:51, 1
+"kettle", 07:25:28, 1
+"kettle", 07:29:31, 1
+"kettle", 07:32:49, 1
+"kettle", 07:36:01, 1
+"kettle", 07:38:16, 1
+"computer", 08:44:38, 1
+"computer", 09:26:15, 1
+"kettle", 10:40:11, 1
+"kettle", 12:31:47, 1
+"kettle", 14:15:22, 1
+"coffee machine", 14:26:52, 1
+"lamp_1", 15:33:04, 1
+"computer", 16:09:26, 1
+"computer", 16:42:50, 1
+"computer", 18:51:11, 1
+"kettle", 20:48:50, 1
+"computer", 21:03:36, 1
+"kettle", 22:41:02, 1

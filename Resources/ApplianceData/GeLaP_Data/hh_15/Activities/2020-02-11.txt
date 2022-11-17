@@ -1,0 +1,5 @@
+"toaster", 07:05:52, 1
+"coffee machine", 07:06:22, 1
+"toaster", 07:08:09, 1
+"toaster", 07:10:54, 1
+"toaster", 07:14:43, 1

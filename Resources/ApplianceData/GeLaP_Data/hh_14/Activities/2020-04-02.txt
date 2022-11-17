@@ -1,0 +1,10 @@
+"kettle", 05:54:34, 1
+"coffee machine", 05:55:41, 1
+"kettle", 06:01:18, 1
+"toaster", 06:05:18, 1
+"kettle", 08:03:33, 1
+"coffee machine", 09:37:15, 1
+"kettle", 11:07:22, 1
+"kettle", 15:46:19, 1
+"television", 16:27:28, 1
+"washing machine", 16:34:40, 1

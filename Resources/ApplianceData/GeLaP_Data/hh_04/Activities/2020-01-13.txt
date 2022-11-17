@@ -1,0 +1,15 @@
+"coffee machine", 04:18:26, 1
+"extractor fan", 08:23:21, 1
+"lamp", 08:58:17, 1
+"kettle", 09:04:01, 1
+"microwave", 09:20:53, 1
+"microwave", 09:51:48, 1
+"coffee machine", 12:38:06, 1
+"extractor fan", 13:20:09, 1
+"lamp", 13:54:14, 1
+"kettle", 14:59:59, 1
+"television", 15:01:05, 1
+"water pump", 15:53:42, 1
+"television", 16:14:26, 1
+"microwave", 17:49:55, 1
+"microwave", 18:30:56, 1

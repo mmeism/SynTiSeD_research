@@ -1,0 +1,8 @@
+"coffee machine", 07:53:21, 1
+"kettle", 10:04:43, 1
+"floor lamp", 10:14:59, 1
+"computer", 10:15:02, 1
+"television_1", 11:01:25, 1
+"television_1", 13:59:11, 1
+"floor lamp", 14:05:08, 1
+"floor lamp", 16:02:25, 1

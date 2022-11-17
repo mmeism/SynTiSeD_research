@@ -1,0 +1,12 @@
+"coffee machine", 06:22:11, 1
+"coffee machine", 08:20:27, 1
+"thermomix", 09:24:32, 1
+"coffee machine", 11:07:42, 1
+"television", 11:08:03, 1
+"washing machine", 11:28:47, 1
+"coffee machine", 13:16:54, 1
+"toaster", 15:00:00, 1
+"toaster", 16:00:51, 1
+"microwave", 16:39:02, 1
+"microwave", 16:42:39, 1
+"microwave", 16:44:50, 1

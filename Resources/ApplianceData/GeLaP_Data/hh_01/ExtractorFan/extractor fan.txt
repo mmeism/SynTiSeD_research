@@ -1,0 +1,7 @@
+2020-03-03, "extractor fan", 10:47:54
+2020-03-04, "extractor fan", 09:38:41
+2020-03-06, "extractor fan", 06:49:08
+2020-03-09, "extractor fan", 10:49:41
+2020-03-11, "extractor fan", 08:50:21
+2020-03-11, "extractor fan", 11:30:29
+2020-03-13, "extractor fan", 07:00:56

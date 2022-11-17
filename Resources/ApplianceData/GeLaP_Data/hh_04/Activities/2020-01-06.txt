@@ -1,0 +1,7 @@
+"coffee machine", 07:01:01, 1
+"lamp", 08:00:22, 1
+"extractor fan", 09:30:32, 1
+"water pump", 10:29:55, 1
+"washing machine", 12:13:57, 1
+"water pump", 12:44:37, 1
+"television", 21:51:01, 1
