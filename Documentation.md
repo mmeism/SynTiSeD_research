@@ -66,7 +66,7 @@ It is important that the txt file only contains one action in one line, otherwis
 In the following there are the Classes described in more detail for using SynTiSeD.
 
 ## SynTiSeD
-*class* SynTiSeD.[SynTiSeD](https://github.com/mmeism/SynTiSeD_research/blob/main/SynTiSeD.py#L13-L127) ()  
+*class* SynTiSeD.[SynTiSeD](https://github.com/mmeism/SynTiSeD_research/blob/main/SynTiSeD.py#L12-L127) ()  
 Simulates time series data,
 
 ### Parameters
@@ -155,7 +155,7 @@ res_dict.add_resident('Karl', action_seq_list)
 -------
 
 ## Resident
-*class* Utils.resident.[\_Resident](https://github.com/mmeism/SynTiSeD_research/blob/main/Utils/resident.py#L37-L135) (name=None, action_sequences_list=None, variance=None)  
+*class* Utils.resident.[\_Resident](https://github.com/mmeism/SynTiSeD_research/blob/main/Utils/resident.py#L37-L134) (name=None, action_sequences_list=None, variance=None)  
 Initialize a resident with the given parameters
 
 ### Parameters
@@ -319,7 +319,7 @@ example_action_1 = _Action('microwave', 40710, 0.8, 600)
 -------
 
 ## Sequencer
-*class* Utils.sequencer.[Sequencer](https://github.com/mmeism/SynTiSeD_research/blob/main/Utils/sequencer.py#L10-L105) (appliance_name=None, input_path=None, output_path=None, power_treshold=None, patience=None, minimal_power_treshhold=None )  
+*class* Utils.sequencer.[Sequencer](https://github.com/mmeism/SynTiSeD_research/blob/main/Utils/sequencer.py#L9-L104) (appliance_name=None, input_path=None, output_path=None, power_treshold=None, patience=None, minimal_power_treshhold=None )  
 
 Initialize a sequencer with the given parameters.
 
