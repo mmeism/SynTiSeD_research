@@ -75,6 +75,7 @@ class _Resident:
                 appliance = self.next_appliances_to_activate[0]
                 power_consumption_pattern = appliance.pick_new_power_consumption_pattern()
                 power_consumption_pattern.index += timestamp
+                power_consumption_pattern = power_consumption_pattern.reindex(list(range(0, power_consumption_pattern.index.max()+1)), fill_value=0)
                 if appliance.power_consumption_pattern.empty:
                     appliance.power_consumption_pattern = pd.DataFrame([np.nan] * timestamp)
                 appliance.power_consumption_pattern = pd.concat(
