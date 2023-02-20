@@ -1,0 +1,14 @@
+name,start_time,end_time,probability,variance
+"coffee machine", 06:59:53, , , 
+"water pump", 09:24:16, , , 
+"kettle", 09:47:37, , , 
+"extractor fan", 09:49:08, , , 
+"microwave", 10:00:28, , , 
+"lamp", 10:43:12, , , 
+"extractor fan", 11:17:52, , , 
+"coffee machine", 13:15:26, , , 
+"extractor fan", 13:53:22, , , 
+"television", 17:38:37, , , 
+"microwave", 18:18:42, , , 
+"microwave", 18:26:00, , ,
+ 
