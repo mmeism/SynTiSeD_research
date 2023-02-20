@@ -1,6 +1,0 @@
-"toaster", 07:50:20, 1
-"coffee machine", 07:50:40, 1
-"toaster", 07:58:07, 1
-"toaster", 08:01:12, 1
-"washing machine", 12:35:43, 1
-"washing machine", 18:59:35, 1
