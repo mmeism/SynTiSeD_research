@@ -1,7 +1,0 @@
-"coffee machine", 07:40:42, 1
-"floor lamp", 08:23:36, 1
-"washing machine", 13:29:25, 1
-"coffee machine", 14:35:59, 1
-"washing machine", 17:38:08, 1
-"dryer", 21:04:22, 1
-"washing machine", 21:05:23, 1
