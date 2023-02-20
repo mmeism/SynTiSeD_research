@@ -1,12 +1,10 @@
 import sys
+import numpy as np
 import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-from Utils.syntised_utils import save_action_sequence, create_directory, save_apl_active_phases
-from Utils.actionsequence import ActionSequenceList
-from Utils.appliance import ApplianceDictionary
-from Utils.resident import ResidentDictionary
+from SynTiSeD.Utils.syntised_utils import save_action_sequence, create_directory, save_apl_active_phases
 
 
 class SynTiSeD:
@@ -37,7 +35,7 @@ class SynTiSeD:
 
     def __build_energydata(self, time: int, permanent_energy_data):
         ## build energy data
-        energy_data = pd.DataFrame(pd.np.empty((time, 0)))
+        energy_data = pd.DataFrame(np.empty((time, 0)))
         energy_data = pd.concat([energy_data, permanent_energy_data[:time]], axis=1)
 
         for appliance in self.used_appliance_list:
@@ -75,8 +73,7 @@ class SynTiSeD:
         ## Check if appliances of the previous day still consuming energy
         for appliance in list(self.used_appliance_list):
             energy_from_prev_day = appliance.power_consumption_pattern[(self.simulation_time+1):].reset_index(drop=True)
-            sum_energy_consumption = sum(energy_from_prev_day.iloc[:, 0])
-            if energy_from_prev_day.empty or sum_energy_consumption <= 0.0:
+            if energy_from_prev_day.empty or sum(energy_from_prev_day.iloc[:, 0]) <= 0.0:
                 self.used_appliance_list.remove(appliance)
                 appliance.refresh_power_consumption_pattern()
             else:
@@ -128,37 +125,3 @@ class SynTiSeD:
         return energy_data_day
 
 
-## Set parameters
-simulated_days = 14
-simulation_start_date = '2022-02-01'
-
-## Initialize appliances
-appl_resource_path = './Resources/ApplianceData/GeLaP_Data/hh_04/'
-appl_dict = ApplianceDictionary()
-appl_dict.add_appliance('coffee machine', appl_resource_path + 'CoffeeMachine/df_zero_filled')
-appl_dict.add_appliance('extractor fan', appl_resource_path + 'ExtractorFan/df_zero_filled')
-appl_dict.add_appliance('kettle', appl_resource_path + 'Kettle/df_zero_filled')
-appl_dict.add_appliance('lamp', appl_resource_path + 'Lamp/df_zero_filled')
-appl_dict.add_appliance('microwave', appl_resource_path + 'Microwave/df_zero_filled')
-appl_dict.add_appliance('television', appl_resource_path + 'Television/df_zero_filled')
-appl_dict.add_appliance('washing machine', appl_resource_path + 'WashingMachine/df_zero_filled')
-appl_dict.add_appliance('water pump', appl_resource_path + 'WaterPump/df_zero_filled')
-
-## Initialize permanent appliances
-perm_appl_dict = ApplianceDictionary()
-perm_appl_dict.add_permanent_appliance('radio', appl_resource_path + 'Radio/')
-perm_appl_dict.add_permanent_appliance('television receiver', appl_resource_path + 'TelevisionReceiver/')
-
-## Initialize avatars
-action_variance = 600
-action_seq_resource_path = './Resources/ApplianceData/GeLaP_Data/hh_04/Activities'
-action_seq_list = ActionSequenceList()
-action_seq_list.append_action_seq_folder(action_seq_resource_path)
-
-res_dict = ResidentDictionary()
-res_dict.add_resident('Karl', action_seq_list, action_variance)
-
-## run SynTiSeD
-syntised = SynTiSeD(appl_dict, perm_appl_dict, res_dict, simulated_days, simulation_start_date)
-syntised.plot_data = True
-energy_data_day, saved_act_seq_list = syntised.run_simulation()
