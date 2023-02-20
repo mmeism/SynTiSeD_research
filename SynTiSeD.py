@@ -4,7 +4,7 @@ import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-from SynTiSeD.Utils.syntised_utils import save_action_sequence, create_directory, save_apl_active_phases
+from Utils.syntised_utils import save_action_sequence, create_directory, save_apl_active_phases
 
 
 class SynTiSeD:
