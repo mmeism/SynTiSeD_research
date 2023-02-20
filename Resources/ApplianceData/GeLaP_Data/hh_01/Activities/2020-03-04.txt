@@ -1,8 +1,0 @@
-"extractor fan", 09:38:41, 1
-"floor lamp", 10:03:50, 1
-"television_1", 10:52:27, 1
-"kettle", 11:12:55, 1
-"computer", 11:26:12, 1
-"floor lamp", 11:29:24, 1
-"microwave", 11:52:54, 1
-"floor lamp", 12:41:56, 1
