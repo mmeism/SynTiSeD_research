@@ -1,0 +1,12 @@
+name,start_time,end_time,probability,variance
+"kettle", 00:24:34, , , 
+"kettle", 00:45:32, , , 
+"coffee machine", 06:17:37, , , 
+"kettle", 06:53:52, , , 
+"kettle", 08:20:11, , , 
+"kettle", 08:47:33, , , 
+"microwave", 09:29:22, , , 
+"microwave", 09:32:43, , , 
+"coffee machine", 12:20:45, , , 
+"washing machine", 12:22:11, , , 
+"microwave", 16:36:53, , , 
