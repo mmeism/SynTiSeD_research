@@ -1,2 +1,0 @@
-"coffee machine", 07:27:01, 1
-"coffee machine", 13:06:42, 1
