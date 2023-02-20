@@ -15,7 +15,7 @@ To run the project, follow the steps below
 1. Clone this project locally
 2. Install python on your machine 
 3. Install all necessary dependencies listed below
-4. Run `SynTiSeD.py` file
+4. Run `example.py` file
 
 ## Dependencies
 To work with this project, you will need the following python libraries installed:
