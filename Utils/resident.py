@@ -1,3 +1,4 @@
+import copy
 import random
 import sys
 import numpy as np
@@ -6,50 +7,50 @@ import pandas as pd
 
 class ResidentDictionary(dict):
     """
-    Initialize a ResidentDictionary from dict.
+    Initialize a ResidentDictionary from dict
     """
-    def add_resident(self, name, action_sequences_list, variance=None):
+    def add_resident(self, name: str, action_sequences_list, variance: int = None):
         """
-        Add an resident with the given parameters to the ResidentDictionary.
+        Add an resident with the given parameters to the ResidentDictionary
 
         Parameters
         ----------
         name : str
             name of the resident
 
-        action_sequences_list : list
+        action_sequences_list : ActionSequenceList
             list of ActionSequences according to which the resident can act
 
         variance : int
-            optional, default = None; variance parameter in seconds; for each appliance, the variance spans an interval
-            with zero, in which a value is randomly selected, that is added or subtracted to the timestamps of the action
+            optional; variance parameter in seconds; for each appliance, the variance spans an interval with zero,
+            in which a value is randomly selected, that is added or subtracted to the timestamps of the action.
 
         """
         if name in self:
-            print('Error: Resident was not initialized correctly. '
-                  'Resident "' + name + '" already exists in dictionary. '
-                  'Please choose another name.')
+            print(f'Error: Resident was not initialized correctly. '
+                  f'Resident "{name}" already exists in dictionary. '
+                  f'Please choose another name.')
             sys.exit()
         else:
             self[name] = _Resident(name, action_sequences_list, variance)
 
 
 class _Resident:
-    def __init__(self, name, action_sequences_list, variance=None):
+    def __init__(self, name: str, action_sequences_list, variance: int = None):
         """
-        Initialize a resident with the given parameters.
+        Initialize a resident with the given parameters
 
         Parameters
         ----------
         name : str
             name of the resident
 
-        action_sequences_list : list
+        action_sequences_list : ActionSequenceList
             list of ActionSequences according to which the resident can act
 
         variance : int
-            optional, default = None; variance parameter in seconds; for each appliance, the variance spans an interval
-            with zero, in which a value is randomly selected, that is added or subtracted to the timestamps of the action
+            optional; variance parameter in seconds; for each appliance, the variance spans an interval with zero,
+            in which a value is randomly selected, that is added or subtracted to the timestamps of the action.
         """
         self.name = name
         self.action_sequences_list = action_sequences_list
@@ -60,9 +61,9 @@ class _Resident:
 
         self.next_appliances_to_activate = []
 
-    def step(self, timestamp):
+    def step(self, timestamp: int):
         """
-        Check if the resident has to activate an Appliance and if yes do so.
+        Check if the resident has to activate an Appliance and if yes do so
 
         Parameters
         ----------
@@ -76,6 +77,7 @@ class _Resident:
                 power_consumption_pattern = appliance.pick_new_power_consumption_pattern()
                 power_consumption_pattern.index += timestamp
                 power_consumption_pattern = power_consumption_pattern.reindex(list(range(0, power_consumption_pattern.index.max()+1)), fill_value=0)
+                self.current_action_sequence[(self.action_seq_iterator-1)].end_timestamp = int(power_consumption_pattern.iloc[::-1].ne(0).idxmax().iloc[0])
                 if appliance.power_consumption_pattern.empty:
                     appliance.power_consumption_pattern = pd.DataFrame([np.nan] * timestamp)
                 appliance.power_consumption_pattern = pd.concat(
@@ -85,9 +87,10 @@ class _Resident:
                     columns={appliance.power_consumption_pattern.columns[0]: appliance.name})
                 self.next_appliances_to_activate.pop(0)
 
-    def pick_action_sequence_consecutively(self, iterator):
+    def pick_action_sequence_consecutively(self, iterator: int):
         """
-        Pick a ActionSequence from the assigned list of ActionSequences as the current ActionSequence.
+        Pick a ActionSequence from the assigned list of ActionSequences
+        as the current ActionSequence
 
         Parameters
         ----------
@@ -98,12 +101,12 @@ class _Resident:
         self.next_appliances_to_activate = []
         self.action_seq_iterator = 0
         number = iterator % len(self.action_sequences_list)
-        self.current_action_sequence = self.action_sequences_list[number]
+        self.current_action_sequence = copy.deepcopy(self.action_sequences_list[number])
         self.current_action_sequence = self.vary_timestamps_in_action_seq(self.current_action_sequence)
 
-    def vary_timestamps_in_action_seq(self, action_seq):
+    def vary_timestamps_in_action_seq(self, action_seq: list):
         """
-        Vary the timestamps of the Actions of an action sequence with a certain variance.
+        Vary the timestamps of the Actions of an action sequence with a certain variance
 
         Parameters
         ----------
@@ -127,9 +130,9 @@ class _Resident:
                     variance = action.variance
                 else:
                     variance = top_level_variance
-                action.timestamp = action.timestamp + random.randint(-variance, variance)
+                action.start_timestamp = action.start_timestamp + random.randint(-variance, variance)
             else:
                 action_seq.remove(action)
         ## sort actions by their timestamps in case
-        action_seq.sort(key=lambda x: x.timestamp)
+        action_seq.sort(key=lambda x: x.start_timestamp)
         return action_seq
