@@ -1,5 +1,0 @@
-"kettle", 06:22:46, 1
-"radio", 06:30:43, 1
-"floor lamp", 17:21:48, 1
-"computer", 17:49:12, 1
-"television_1", 17:53:12, 1
