@@ -1,4 +1,4 @@
-<img align="right" src="Resources/Images/SynTiSeD_Logo.jpeg" width="256"/>
+<img align="right" src="Resources/Images/SynTiSeD_Logo.gif" width="256"/>
 
 
 # SynTiSeD - Synthetic Time Series Data Generator
