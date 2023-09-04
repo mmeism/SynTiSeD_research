@@ -34,6 +34,20 @@ To work with this project, you will need the following python libraries installe
 You can find a detailed documentation of all relevant SynTiSeD classes, functions and methods [here](https://github.com/mmeism/SynTiSeD_research/blob/main/Documentation.md).
 
 
+## Cite
+To cite [this work](https://ieeexplore.ieee.org/abstract/document/10123429): 
+```
+@inproceedings{meiser2023syntised,
+  title={SynTiSeD--Synthetic Time Series Data Generator},
+  author={Meiser, Michael and Duppe, Benjamin and Zinnikus, Ingo},
+  booktitle={2023 11th Workshop on Modelling and Simulation of Cyber-Physical Energy Systems (MSCPES)},
+  pages={1--6},
+  year={2023},
+  organization={IEEE}
+}
+```
+
+
 ## References
 <a id="1">[1]</a> 
 Wilhelm, Sebastian and Jakob, Dietmar and Kasbauer, Jakob and Ahrens, Diane, “GeLaP: German labeled dataset for power consumption,” in Proceedings of Sixth International Congress on Information and Communication Technology. Springer Singapore, Sep. 2021, pp. 21–33, https://mygit.th-deg.de/tcg/GeLaP; Version 2020-02-17. [Online]. Available: https://doi.org/10.1007/978-981-16-2377-6_5
